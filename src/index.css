@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    --primary: 210 79% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 20% 15%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 122 38% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 82% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --emergency: 4 82% 56%;
+    --emergency-foreground: 0 0% 100%;
+
+    --success: 122 38% 57%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 36 100% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 79% 51%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 20% 10%;
+    --foreground: 210 40% 98%;
+    --card: 210 20% 13%;
+    --card-foreground: 210 40% 98%;
+    --popover: 210 20% 13%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 79% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 122 38% 57%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 82% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --emergency: 4 82% 56%;
+    --emergency-foreground: 0 0% 100%;
+    --success: 122 38% 57%;
+    --success-foreground: 0 0% 100%;
+    --warning: 36 100% 50%;
+    --warning-foreground: 0 0% 100%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 210 79% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  [dir="rtl"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+@layer utilities {
+  .emergency-pulse {
+    animation: pulse-emergency 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-emergency {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(4 82% 56% / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 12px hsl(4 82% 56% / 0);
+    }
+  }
+}
